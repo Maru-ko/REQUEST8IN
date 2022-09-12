@@ -30,7 +30,7 @@ here's some c8de
 ## Credits
 
 Links to GitHub profiles.
-- [Marcos](https://github.com/Maru-ko)
+- ![me](https://github.com/account)[Marcos](https://github.com/Maru-ko)
 - [Mohamad](https://github.com/melchanti)
 - [Martin](https://github.com/martin-anderson-graham)
 - [Cody](https://github.com/Code-yWilliams)
