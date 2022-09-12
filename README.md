@@ -20,7 +20,7 @@ TEAM 8 POWER:
 - A?
 - B?
 - C?
-
+- D?
 
 ## Code
 
@@ -40,12 +40,13 @@ Links to GitHub profiles.
 
 
 
-## Table of Contents (Optional)
+## Table of Contents
 
-If your README is long, add a table of contents to make it easy for users to find what they need.
+If the README is long, use hashtagz just like 
 
 - [Installation](#installation)
 - [Usage](#usage)
 - [Credits](#credits)
 - [License](#license)
+- [NoSQL](#NoSQL)
 
