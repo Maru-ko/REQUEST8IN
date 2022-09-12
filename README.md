@@ -23,9 +23,9 @@ If your README is long, add a table of contents to make it easy for users to fin
 
 here's some c8de
 
-    ```go
+```go
     hello := "world"
-    ```
+```
 
 ## Credits
 
