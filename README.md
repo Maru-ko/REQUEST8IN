@@ -1,5 +1,18 @@
 # REQUEST8IN
 
+## License
+
+lissenz
+
+---
+
+🏆 Champs
+
+## hello
+
+![badmath](https://github.com/Maru-ko/Request8in/blob/main/img/8.jpg)
+
+
 ## Description
 
 TEAM 8 POWER:
@@ -35,14 +48,3 @@ Links to GitHub profiles.
 - [Martin](https://github.com/martin-anderson-graham)
 - [Cody](https://github.com/Code-yWilliams)
 
-## License
-
-lissenz
-
----
-
-🏆 Champs
-
-## hello
-
-![badmath](https://github.com/Maru-ko/Request8in/blob/main/img/6.jpg)
