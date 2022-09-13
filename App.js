@@ -9,9 +9,20 @@ app.get('/', (req, res) => {
   res.render('home')
 });
 
+app.get('/bin/:bin_id', (req, res) => {
+  res.render('home')
+});
 
+app.get('/bin/:bin_id/view', (req, res) => {
 
+});
 
+app.post('/', (req, res) => {
 
+});
+
+app.post('/bin/:bin_id', (req, res) => {
+
+});
 
 app.listen(PORT, () => console.log("we are listening on por" + PORT))
