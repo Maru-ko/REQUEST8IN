@@ -33,7 +33,7 @@ app.post('/', (req, res) => {
   .catch(err => {
       res.json({message: err})
   })
-
+})
 
 app.post('/bin/:bin_id', (req, res) => {
 
