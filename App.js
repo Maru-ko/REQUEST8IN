@@ -4,42 +4,24 @@
 // ReactDOM.createRoot(document.getElementById('root')).render(<App />)
 
 
-// const express = require('express');
 import Express from "express";
-
 const app = Express();
 app.set('view engine', 'pug')
 app.use(Express.static('static'))
 
-// const path = require('path')
 const PORT = process.env.PORT || 3000;
 
 // app.get('^/$|index(.html)?', (req, res) => {
 app.get('/', (req, res) => {
-  // res.render('home', { title: 'Hey', message: 'Hello there!' })
+
   res.render('home')
-  // res.send('hey')
-    // res.sendFile(path.join('./views/home.pug', { root: __dirname}));
-  // rest.sendFile(path.join(___dirname, ))
-  // res.sendFile(path.join(__dirname, 'views', 'home.pug'))
+
 });
 
-app.get('/*', (req, res) => {
-  // path
-})
-// import Express from "express";
-// import { compareAsc, format } from 'date-fns'
-// import Stuff from "stuff.js"
-// const { v4: uuid } = require('uuid')
-// format(new Date(2014, 1, 11), 'yyyy-MM-dd')
-// const eventEmitter = require('events')
+// app.get('/*', (req, res) => {
 
-// const app = Express();
-// const port = 3001;
-// app.get("/", (req, res) => {
-//   res.send("nGrok4Life");
-//   // res.json(Stuff)
 // })
+
 
 
 
