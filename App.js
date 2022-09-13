@@ -4,10 +4,11 @@
 // ReactDOM.createRoot(document.getElementById('root')).render(<App />)
 
 
-import Express from "express";
-const app = Express();
+// import Express from "express";
+const express = require('express')
+const app = express();
 app.set('view engine', 'pug')
-app.use(Express.static('static'))
+app.use(express.static('static'))
 
 const PORT = process.env.PORT || 3000;
 
