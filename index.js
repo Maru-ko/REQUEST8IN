@@ -6,7 +6,8 @@ const PORT = process.env.PORT || 3000;
 
 app.get('/', (req, res) => {
   // res.send('hey')
-  // res.sendFile('./views/')
+  res.sendFile('./views/home.pug', { root: __dirname});
+  // rest.sendFile(path.join(___dirname, ))
 });
 
 // import Express from "express";
