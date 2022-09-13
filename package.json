@@ -1,0 +1,24 @@
+{
+  "name": "request8in",
+  "version": "1.0.0",
+  "description": "Team 8 Request Bin",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Maru-ko/REQUEST8IN.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Maru-ko/REQUEST8IN/issues"
+  },
+  "homepage": "https://github.com/Maru-ko/REQUEST8IN#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
