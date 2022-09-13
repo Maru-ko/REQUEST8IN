@@ -1,12 +1,25 @@
+// import ReactDOM from 'react-dom/client'
+// import App from './App'
+
+// ReactDOM.createRoot(document.getElementById('root')).render(<App />)
+
+
 // const express = require('express');
 import Express from "express";
+
 const app = Express();
-  // const path = require('path')
+app.set('view engine', 'pug')
+
+
+// const path = require('path')
 const PORT = process.env.PORT || 3000;
 
-app.get('^/$|index(.html)?', (req, res) => {
+// app.get('^/$|index(.html)?', (req, res) => {
+app.get('/', (req, res) => {
+  // res.render('home', { title: 'Hey', message: 'Hello there!' })
+  res.render('home')
   // res.send('hey')
-  // res.sendFile(path.join('./views/home.pug', { root: __dirname}));
+    // res.sendFile(path.join('./views/home.pug', { root: __dirname}));
   // rest.sendFile(path.join(___dirname, ))
   // res.sendFile(path.join(__dirname, 'views', 'home.pug'))
 });
