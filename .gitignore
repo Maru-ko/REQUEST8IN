@@ -4,3 +4,4 @@ node_modules
 .up_Dog
 
 .env
+img/.DS_Store
