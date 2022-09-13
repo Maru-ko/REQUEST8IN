@@ -9,7 +9,7 @@ import Express from "express";
 
 const app = Express();
 app.set('view engine', 'pug')
-
+app.use(Express.static('static'))
 
 // const path = require('path')
 const PORT = process.env.PORT || 3000;
