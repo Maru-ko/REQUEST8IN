@@ -1,6 +1,8 @@
 html {
   --main-bg-color: #347fc4;
   --component-color: #272838;
+  --request-area-bg: #19191d;
+  --border-color: #989fce;
   --text-color: #989fce;
   --border-radius: 4px;
 }
@@ -62,6 +64,72 @@ body {
   flex-direction: column;
   gap: 10px;
 }
+
+.requests-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 2%;
+}
+
+.request-container {
+  background-color: var(--request-area-bg);
+  border-radius: var(--border-radius);
+  padding: 1%;
+  display: grid;
+  grid-template-columns: 40% auto;
+  grid-template-rows: auto auto auto;
+  grid-template-areas: 
+  "topline topline"
+  "parsed_content headers"
+  "raw_content raw-content";
+  column-gap: 10px;
+  row-gap: 20px;
+}
+
+.request-topline {
+  grid-area: topline;
+  border-bottom: var(--border-color);
+  border-width: 1px;
+  border-style: hidden hidden solid hidden;
+
+  display:flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: baseline;
+  gap: 30px;
+  padding-bottom: 4px;
+}
+
+.request-topline-method {
+  border-style: solid;
+  border-color: var(--border-color);
+  border-width: 1px;
+  padding: 0 10px 0 10px;
+  border-radius: var(--border-radius);
+}
+
+.request-topline-content {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+
+.request-headers {
+  grid-area: headers;
+}
+
+.request-parsed-content {
+  grid-area: parsed_content;
+}
+
+.request-raw-content {
+  grid-area: raw_content;
+}
+
+
 
 .footer {
   background-color: var(--component-color);

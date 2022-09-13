@@ -1,8 +1,26 @@
 extends layout 
 
-mixin
+mixin request(data)
+  .request-topline 
+    .request-topline-method
+      p #{data.method}
+    .request-topline-content
+      p Time: #{data.timestamp}
+      p IP: #{data.ip}
+  .request-headers
+    h3 Headers:
+    each val, key in data.headers
+      p #{key}:#{val}
+  .request-parsed-content
+    p #{data.payload}
+  .request-raw-content
+    h3 Raw Data
+    p #{data.raw}
+  
+
 
 block content
-  
-  .request-container
-    p some bin info
+  .requests-container
+    each req in reqs
+      .request-container 
+        +request(req)
