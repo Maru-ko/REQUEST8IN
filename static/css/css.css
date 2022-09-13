@@ -1,0 +1,65 @@
+html {
+  --main-bg-color: #347fc4;
+  --component-color: #272838;
+  --text-color: #989fce;
+  --border-radius: 4px;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: var(--text-color);
+  background-color: var(--main-bg-color);
+  display: grid;
+  grid-template-columns: 15% auto;
+  grid-template-rows: 10% auto 10%;
+  grid-template-areas: 
+  "header header"
+  "sidebar content"
+  "sidebar footer";
+  column-gap: 10px;
+  row-gap: 10px;
+}
+
+.header {
+  grid-area: header;
+  background-color: var(--component-color);
+  border-radius: var(--border-radius);
+}
+
+.header-content {
+  margin-left: 2%;
+  display:flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: baseline;
+  gap: 5%;
+}
+
+.content {
+  grid-area: content;
+  background-color: var(--component-color);
+  padding: 2px 0px 0px 10px;
+  border-radius: var(--border-radius);
+}
+
+.sidebar {
+  grid-area: sidebar;
+  padding-left: 10%;
+  background-color: var(--component-color);
+  border-radius: var(--border-radius);
+}
+
+.sidebar-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: baseline;
+  gap: 5%;
+}
+
+.footer {
+  background-color: var(--component-color);
+  grid-area: footer;
+  padding-left: 10px;
+  border-radius: var(--border-radius);
+}
