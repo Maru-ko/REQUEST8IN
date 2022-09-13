@@ -57,9 +57,19 @@ body {
   gap: 5%;
 }
 
+#sidebar-items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .footer {
   background-color: var(--component-color);
   grid-area: footer;
   padding-left: 10px;
   border-radius: var(--border-radius);
+}
+
+a {
+  color: var(--text-color)
 }

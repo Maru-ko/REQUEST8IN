@@ -1,3 +1,6 @@
+mixin sidebarItem(id)
+  a(href="requestbin.mohamadelchanti.com/bin/#{id}/view") #{id}
+
 html 
   head 
     title Request8in 
@@ -6,6 +9,8 @@ html
     link(rel="preconnect" href="https://fonts.googleapis.com")
     link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
     link(href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet")
+    script(src='scripts/save-binid-to-local.js')
+    script(src='scripts/load-local-bins.js')
 
 body 
   .header
@@ -21,5 +26,9 @@ body
       form(action="" method="post")
         input(type="image" src="images/plus.png" alt="Create a new bin" height="20px" width="20px") 
       h3 Your bins
+    #sidebar-items
+
   .footer
     p ©Team8 2022
+
+
