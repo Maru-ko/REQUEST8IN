@@ -1,4 +1,41 @@
 extends layout 
 
+mixin request(data)
+  .request-topline 
+    .request-topline-method
+      h4 #{data.method}
+    .request-topline-content
+      p Protocol: #{data.protocol}
+      p Time: #{data.time_received}
+      p IP: #{data.requestor_ip}
+  .request-headers
+    h3 Headers
+    each val, key in data.headers
+      p <strong>#{key}:</strong> #{val}
+  .request-parsed-content
+    if data.body 
+      h3 Body
+      p #{data.body}
+    if data.queryParams
+      h3 Query Parameters 
+      each val, key in data.queryParams 
+        p <strong>#{key}:</strong> #{val}
+    p #{data.payload}
+  .request-raw-content
+    h3 Raw Data
+    p #{data.raw}
+  
+
+
 block content
-  p some bin info
+  .bin-container
+    .bin-header 
+      h2 requestbin.mohamadel-chanti.com/bin/#{binid}
+      p Send requests to the above URL
+      h3 Request History:
+
+
+    .requests-container
+      each req in reqs
+        .request-container 
+          +request(req)
