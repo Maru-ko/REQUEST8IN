@@ -20,7 +20,7 @@ const addRequestToBin = async (binId, request) => {
                          }
                        });
 
-  return result.acknowledged // returns true if the change occurred
+  return result.acknowledged; // returns true if the change occurred
 }
 
 const getRequestsByBinId = async (binId) => {
