@@ -5,11 +5,10 @@ const app = express();
 app.set('view engine', 'pug')
 app.use(express.static('static'))
 
-
 // app.use(express.urlencoded({
 //   extended: true
 // }))
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3003;
 
 app.get('/', (req, res) => {
   res.render('home')
@@ -41,6 +40,4 @@ app.post('/', (req, res) => {
 app.post('/bin/:bin_id', (req, res) => {
 
 });
-
-
 app.listen(PORT, () => console.log("we are listening on port" + PORT))
