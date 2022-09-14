@@ -7,6 +7,8 @@ const app = express();
 
 app.set('view engine', 'pug')
 app.use(express.static('static'))
+app.use(express.json())
+
 
 const PORT = 3003;
 
@@ -43,10 +45,10 @@ app.post('"/bin/:bin_id"', (req, res) => {
 })
 
 app.post('/', (req, res) => {
-  //
-  let bin = `code to create bin goes here`
-  // push bin to appropriate place
-  res.status(201).render('home')
+  //replace with call to database module to create a bin
+  let newBinId = Math.floor(Math.random()*1000000)
+
+  res.json({newBinId})
 });
 
 app.listen(PORT, () => console.log("we are listening on port" + PORT))
