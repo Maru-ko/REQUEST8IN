@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS bins (
+  id SERIAL PRIMARY KEY,
+  path UUID UNIQUE NOT NULL,
+  ip VARCHAR,
+  date_created DATE
+);
