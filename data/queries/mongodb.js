@@ -1,17 +1,22 @@
-const BinModel = require('..configs/mongodb.js');
+require('dotenv').config();
+const BinModel = require('../configs/mongodb.js');
+const { parseRequest } = require('../../utils/request.js');
 
 const createBin = async (binId) => {
-  const result = await BinModel.insert({ id: binId, requests: [] });
-  return result.nInserted == 1; // returns true if the creation occurred
+  const bin = new BinModel({ binId: binId, requests: [] });
+  const result = await bin.save();
+  return result; // returns true if the creation occurred
 }
 
 const deleteBin = async (binId) => {
-  const result = await BinModel.remove({ id: binId });
+  const result = await BinModel.remove({ binId: binId });
   return result.nRemoved >= 1; // returns true if a corresponding bin was removed
 }
 
 const addRequestToBin = async (binId, request) => {
-  const result = await BinModel.updateOne({ id: binId }, {
+  request = parseRequest(request);
+
+  const result = await BinModel.updateOne({ binId: binId }, {
                          $push: { 
                            requests: {
                              $each: [request],
@@ -24,8 +29,7 @@ const addRequestToBin = async (binId, request) => {
 }
 
 const getRequestsByBinId = async (binId) => {
-  const requests = await BinModel.find({ id: binId });
-  console.log(requests);
+  const requests = await BinModel.find({ binId: binId });
   return requests;
 }
 

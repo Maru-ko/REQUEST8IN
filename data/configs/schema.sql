@@ -1,6 +1,8 @@
-CREATE TABLE IF NOT EXISTS bins (
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+CREATE TABLE IF NOT EXISTS "bins" (
   id SERIAL PRIMARY KEY,
-  path UUID UNIQUE NOT NULL,
+  path UUID UNIQUE NOT NULL DEFAULT uuid_generate_v4(),
   ip VARCHAR,
-  date_created DATE
+  date_created DATE DEFAULT CURRENT_DATE,
+  last_request_date DATE DEFAULT CURRENT_DATE
 );
