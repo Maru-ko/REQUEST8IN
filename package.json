@@ -10,7 +10,7 @@
     "dev": "nodemon App.js",
     "pull": "sudo ssh-agent bash -c 'ssh-add /home/mo/.ssh/id_ed25519; git pull origin main'",
     "push": "sudo ssh-agent bash -c 'ssh-add /home/mo/.ssh/id_ed25519; git push origin vpsBranch'",
-    "checkout": "sudo git checkout vpsBranch",
+    "checkout": "sudo git checkout -b vpsBranch",
     "pm2Restart": "sudo pm2 restart App"
   },
   "repository": {
