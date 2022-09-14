@@ -3,6 +3,11 @@ const app = express();
 app.set('view engine', 'pug')
 app.use(express.static('static'))
 
+
+// app.use(express.urlencoded({
+//   extended: true
+// }))
+
 const PORT = process.env.PORT || 3003;
 
 app.get('/', (req, res) => {
@@ -10,8 +15,5 @@ app.get('/', (req, res) => {
 });
 
 
+app.listen(PORT, () => console.log("we are listening on port" + PORT))
 
-
-
-
-app.listen(PORT, () => console.log("we are listening on por" + PORT))
