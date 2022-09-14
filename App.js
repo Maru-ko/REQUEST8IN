@@ -9,7 +9,6 @@ const app = express();
 app.set('view engine', 'pug')
 app.use(express.static('static'))
 
-
 const PORT = 3003;
 
 app.get('/', (req, res) => {
@@ -58,6 +57,14 @@ app.post('"/bin/:bin_id"', async (req, res) => {
 app.post('/', async (req, res) => {
   let newBin = await database.createBin()
   res.json({ newBinId })
+});
+
+app.get('*', async (req, res) => {
+  res.sendStatus(301).redirect('/');
+});
+
+app.post('*', async (req, res) => {
+  res.sendStatus(301).redirect('/')
 });
 
 app.listen(PORT, () => console.log("we are listening on port" + PORT))
