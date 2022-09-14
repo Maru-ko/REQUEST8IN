@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node App.js",
     "dev": "nodemon App.js",
-    "pull": "sudo ssh-agent bash -c 'ssh-add /home/mo/.ssh/id_ed25519; git pull'",
+    "pull": "sudo ssh-agent bash -c 'ssh-add /home/mo/.ssh/id_ed25519; git pull git@github.com:Maru-ko/REQUEST8IN.git main'",
     "push": "sudo ssh-agent bash -c 'ssh-add /home/mo/.ssh/id_ed25519; git push origin vpsBranch'",
     "checkout": "sudo git checkout vpsBranch",
     "pm2Restart": "sudo pm2 restart App"
