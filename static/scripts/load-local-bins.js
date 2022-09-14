@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const container = document.querySelector('#sidebar-items')
     bin_ids.forEach(id => {
       const link = document.createElement('a');
-      link.setAttribute('href', `http://requestbin.mohamadelchanti.com/bin/${id}/view`)
+      link.setAttribute('href', `http://requestbin.mohamadel-chanti.com/bin/${id}/view`)
       link.innerText = id;
       container.appendChild(link)
     })
