@@ -5,7 +5,7 @@ mongoose.connect(`mongodb://${process.env.MONGODB_USER}:${process.env.MONGODB_PA
         .then(() => console.log('Connected to MongoDB'));
 
 const BinSchema = new Schema({
-  id: Integer,
+  id: String,
   requests: [{
     method: String,
     raw: String,
