@@ -56,15 +56,15 @@ app.post('"/bin/:bin_id"', async (req, res) => {
 //create a new bin and return its newbinID as json
 app.post('/', async (req, res) => {
   let newBin = await database.createBin()
-  res.json({ newBinId })
+  res.json({ newBin })
 });
 
 app.get('*', async (req, res) => {
-  res.sendStatus(301).redirect('/');
+  res.redirect('/');
 });
 
 app.post('*', async (req, res) => {
-  res.sendStatus(301).redirect('/')
+  res.redirect('/')
 });
 
 app.listen(PORT, () => console.log("we are listening on port" + PORT))
