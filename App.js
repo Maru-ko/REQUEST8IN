@@ -1,10 +1,10 @@
 require('dotenv').config();
 const express = require('express');
 const database = require("./data/configs/Data");
-// const flash = require("express-flash")
 const { v4: uuid } = require('uuid');
-// const { addRequest, createBin } = require('./data/configs/Data');
 const app = express();
+// const flash = require("express-flash")
+// const { addRequest, createBin } = require('./data/configs/Data');
 
 app.set('view engine', 'pug')
 app.use(express.static('static'))
