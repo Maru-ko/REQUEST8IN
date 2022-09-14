@@ -65,11 +65,21 @@ body {
   gap: 10px;
 }
 
+.bin-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.bin-header {
+  padding-left: 2%;
+}
+
 .requests-container {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  padding: 2%;
+  padding: 0% 2% 2% 2%;
 }
 
 .request-container {
