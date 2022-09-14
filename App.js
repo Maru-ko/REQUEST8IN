@@ -1,34 +1,52 @@
 const express = require('express')
+// const database = require('wherever the database is')
 
-const { v4: uuid } = require('uuid')
+// const flash = require("express-flash")
+  const { v4: uuid } = require('uuid')
 const app = express();
-const flash = require("express-flash")
+
 app.set('view engine', 'pug')
 app.use(express.static('static'))
 
-const PORT = process.env.PORT || 3003;
+const PORT = 3003;
 
 app.get('/', (req, res) => {
-  res.render('home'); 
+  res.status(200).render('home'); 
 });
 
 app.get('/bin/:bin_id', (req, res) => { // 
-
+  const bin = `search 'database' for ${req.params.binID}`;
+  if (bin) {
+    res.status(200).render(`bin/${bin.id}`)
+  } else {
+    res.sendStatus(404).render('404') // or just show the appropriate bin
+  }
 });
 
 app.get('/bin/:bin_id/view', (req, res) => {
-  res.render('bin')
+  // No clue
+  //res.render('bin')
 });
 
 app.post('"/bin/:bin_id"', (req, res) => { 
-  let bin = 'codetomakeabinGoeshere'
-  // check if ID is in DB
-  flash("OK!", "No errors I guess.");
-  res.redirect(302, `/bin/${bin.id}/view`)
+
+  let request;
+      // check if req.ID is not in bin/DB
+  if ('request not in bin') {
+    request = 'code to add request to bin goes here'
+    // flash("OK!", "No errors I guess.");
+    res.status(301).redirect(`/bin/${req.id}/view`)
+  } else {
+    // display error 
+    res.status(400).render('home');
+  }
 })
 
-
-// app.post('/', (req, res) => {
-// });
+app.post('/', (req, res) => {
+  //
+  let bin = `code to create bin goes here`
+  // push bin to appropriate place
+  res.status(201).render('home')
+});
 
 app.listen(PORT, () => console.log("we are listening on port" + PORT))
