@@ -3,7 +3,7 @@ const app = express();
 app.set('view engine', 'pug')
 app.use(express.static('static'))
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3003;
 
 app.get('/', (req, res) => {
   res.render('home')
