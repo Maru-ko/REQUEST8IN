@@ -1,11 +1,13 @@
 const express = require('express')
-
+const { parseRequest } = require('./utils/request');
 const { v4: uuid } = require('uuid')
 const app = express();
-const flash = require("express-flash")
+//const flash = require("express-flash")
+app.set('trust proxy', true);
 app.set('view engine', 'pug')
 app.use(express.static('static'))
-
+app.use(express.json());
+app.use(express.urlencoded({extended: false}));
 const PORT = process.env.PORT || 3003;
 
 app.get('/', (req, res) => {
