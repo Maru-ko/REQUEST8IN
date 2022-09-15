@@ -1,12 +1,10 @@
 const mongoQueries = require('./queries/mongodb.js');
 const postgresQueries = require('./queries/postgresql.js');
 
-// binExists(binId)
 const binExists = async (binId) => {
   return await postgresQueries.binExists(binId)
 }
 
-// createBin() => returns binId (UUID)
 const createBin = async (req) => {
   const ip = req.headers['x-forwarded-for'] || req.ip;
   const binId = await postgresQueries.createBin(ip);
@@ -16,6 +14,7 @@ const createBin = async (req) => {
 
 const addRequest = async (binId, req) => {
   const added = await mongoQueries.addRequestToBin(binId, req);
+  await postgresQueries.updateBin();
   return added;
 }
 
@@ -29,13 +28,22 @@ const deleteBin = async (binId) => {
   return await mongoQueries.deleteBin(binId);
 }
 
-const methods = {
+const deleteBinsOlderThan = async (daysOld) => {
+  const binsToDelete = await postgresQueries.getBinsOlderThan(daysOld);
+  binsToDelete.forEach(async binId => {
+    await postgresQueries.deleteBin(binId);
+    await mongoQueries.deleteBin(binId);
+  });
+}
+
+const dataMethods = {
   binExists,
   createBin,
   addRequest,
   getRequests,
   deleteBin,
+  deleteBinsOlderThan,
 
 }
 
-module.exports = methods;
+module.exports = dataMethods;

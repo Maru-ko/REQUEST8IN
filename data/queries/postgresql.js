@@ -8,18 +8,19 @@ const createBin = async (ip) => {
 }
 
 const deleteBin = async (binId) => {
-  const result = await PGPool.query('DELETE FROM bins WHERE path = $1 RETURNING true', binId);
+  const result = await PGPool.query('DELETE FROM bins WHERE path = $1 RETURNING true', [binId]);
   const deleted = result.rowCount == 1;
   return deleted;
 }
 
-const getBinIdsByDate = async (date) => {
-
-  // return array of bin Ids for bins that were created on a particular date
+const getBinsOlderThan = async (daysOld) => {
+  const bins = await PGPool.query(`SELECT path FROM bins WHERE last_request_date < CURRENT_DATE - ${daysOld}`);
+  const binIds = bins.rows.map(row => row.path);
+  return binIds;
 }
 
 const updateBin = async (binId) => {
-  const result  = await PGPool.query("UPDATE bins SET last_request_date = '2022-09-15' WHERE path = $1 RETURNING true", [binId]);
+  const result  = await PGPool.query('UPDATE bins SET last_request_date = CURRENT_DATE WHERE path = $1 RETURNING true', [binId]);
   const updated = result.rowCount == 1;
   return updated;
 } 
@@ -34,7 +35,7 @@ const postgresQueries = {
   createBin,
   deleteBin,
   updateBin,
-  getBinIdsByDate,
+  getBinsOlderThan,
   binExists,
 }
 
