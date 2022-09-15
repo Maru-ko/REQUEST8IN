@@ -13,7 +13,6 @@ module.exports.parseRequest = (req) => {
     body = JSON.stringify(body);
   }
 
-  body = body.toString ? body.toString() : JSON.stringify(body);
   if (body === '{}') {
     body = undefined;
   }
