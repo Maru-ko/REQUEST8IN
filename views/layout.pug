@@ -1,5 +1,5 @@
 mixin sidebarItem(id)
-  a(href="requestbin.mohamadelchanti.com/bin/#{id}/view") #{id}
+  a(href=`http://${hostname}/bin/${id}/view`) #{id}
 
 html 
   head 
@@ -9,8 +9,8 @@ html
     link(rel="preconnect" href="https://fonts.googleapis.com")
     link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
     link(href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet")
-    script(src='scripts/create-bin.js')
-    script(src='scripts/load-local-bins.js')
+    script(src=`${hostname}/scripts/create-bin.js`)
+    script(src=`${hostname}/scripts/load-local-bins.js`)
 
 body 
   .header
@@ -24,7 +24,7 @@ body
   .sidebar 
     .sidebar-header
       a(href='/')#create-bin-button
-        img(src="/images/plus-purple.png" width="30px" height="30px")
+        img(src=`${hostname}/images/plus-purple.png` width="30px" height="30px")
       h3 Your bins
     #sidebar-items
 
