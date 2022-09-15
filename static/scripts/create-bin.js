@@ -4,7 +4,7 @@ async function createBin(event) {
     method: 'POST'
   })
   let json = await res.json();
-  let newBinId = json.newBinId;
+  let newBinId = json.newBin;
 
   let data = localStorage.getItem('bins')
   if (data) {
@@ -15,7 +15,7 @@ async function createBin(event) {
     localStorage.setItem('bins', JSON.stringify([newBinId]))
   }
 
-  window.location.href = `http://requestbin.mohamadel-chanti.com/bin/${newBinId}/view`
+  window.location.href = `http://requestbin.mohamadel-chanti/bin/${newBinId}/view`
 }
 
 document.addEventListener('DOMContentLoaded', () => {

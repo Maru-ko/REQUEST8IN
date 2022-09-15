@@ -18,6 +18,7 @@ app.get('/', (req, res) => {
 app.get('/bin/:bin_id/view', async (req, res) => {
   let bin_id = req.params.bin_id;
   const binExists = await database.binExists(bin_id);
+  debugger;
   if (binExists) {
     const reqs = await database.getRequests(bin_id);
     res.render('bin', {
@@ -55,7 +56,7 @@ app.post('"/bin/:bin_id"', async (req, res) => {
 
 //create a new bin and return its newbinID as json
 app.post('/', async (req, res) => {
-  let newBin = await database.createBin()
+  let newBin = await database.createBin(req)
   res.json({ newBin })
 });
 
