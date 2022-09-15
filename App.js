@@ -18,7 +18,6 @@ app.get('/', (req, res) => {
 app.get('/bin/:bin_id/view', async (req, res) => {
   let bin_id = req.params.bin_id;
   const binExists = await database.binExists(bin_id);
-  debugger;
   if (binExists) {
     const reqs = await database.getRequests(bin_id);
     res.render('bin', {
@@ -43,9 +42,9 @@ app.get('/bin/:bin_id', async (req, res) => { //
 });
 
 //adding post requests to a bin
-app.post('"/bin/:bin_id"', async (req, res) => { 
+app.post('/bin/:bin_id/', async (req, res) => { 
   const binExists = await database.binExists(req.params.bin_id);
-
+  
   if (binExists) {
     await database.addRequest(req.params.bin_id, req)
     res.sendStatus(201);
