@@ -32,7 +32,7 @@ const getRequestsByBinId = async (binId) => {
   const bins = await BinModel.find({ binId: binId });
   const bin = bins[0];
   const requests = bin.requests
-  return requests;
+  return requests.reverse();
 }
 
 const mongoQueries = {
