@@ -25,7 +25,7 @@ const getRequests = async (binId) => {
 }
 
 const deleteBin = async (binId) => {
-  
+  return await mongoQueries.deleteBin(binId);
 }
 
 const methods = {
@@ -33,6 +33,7 @@ const methods = {
   createBin,
   addRequest,
   getRequests,
+  deleteBin,
 
 }
 
