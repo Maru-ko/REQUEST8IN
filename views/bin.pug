@@ -1,28 +1,29 @@
 extends layout 
 
 mixin request(data)
-  .request-topline 
-    .request-topline-method
-      h4 #{data.method}
-    .request-topline-content
-      p Protocol: #{data.protocol}
-      p Time: #{data.time_received}
-      p IP: #{data.requestor_ip}
-  .request-headers
-    h3 Headers
-    each val, key in data.headers
-      p <strong>#{key}:</strong> #{val}
-  .request-parsed-content
-    if data.body 
-      h3 Body
-      p #{data.body}
-    if data.queryParams
-      h3 Query Parameters 
-      each val, key in data.queryParams 
+  .request-grid-topline-content
+    .request-topline 
+      .request-topline-method
+        h4 #{data.method}
+      .request-topline-content
+        p Protocol: #{data.protocol}
+        p Time: #{data.time_received}
+        p IP: #{data.requestor_ip}
+    .request-headers
+      h3 Headers
+      each val, key in data.headers
         p <strong>#{key}:</strong> #{val}
-    p #{data.payload}
-  .request-raw-content
-    h3 Raw Data
+    .request-parsed-content
+      if data.body 
+        h3 Body
+        p #{data.body}
+      if data.queryParams
+        h3 Query Parameters 
+        each val, key in data.queryParams 
+          p <strong>#{key}:</strong> #{val}
+      p #{data.payload}
+  h3 Raw Data
+  .request-raw-nowrap
     p #{data.raw}
   
 
