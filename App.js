@@ -67,12 +67,15 @@ app.post('/', async (req, res) => {
 app.post('/verifybins', express.json(), async (req, res) => {
   let clientBins = req.body;
   let promiseArr = clientBins.map(bin_id => {
-    return new Promise( async (resolve) => {
-      if (await database.binExists(bin_id)) {
-        resolve(bin_id)
-      } else {
-        resolve("")
-      }})
+    return new Promise( (resolve) => {
+      database.binExists(bin_id).then( val => {
+        if(val) {
+          resolve(bin_id)
+        } else {
+          resolve("")
+        }
+      })
+    })
   })
   let existingBins = await Promise.all(promiseArr)
   existingBins = existingBins.filter( val => val !== "");
