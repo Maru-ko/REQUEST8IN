@@ -15,9 +15,9 @@ async function createBin(event) {
     localStorage.setItem('bins', JSON.stringify([newBinId]))
   }
 
-  window.location.href = `http://requestbin.mohamadel-chanti/bin/${newBinId}/view`
+  window.location.href = `http://requestbin.mohamadel-chanti.com/bin/${newBinId}/view`
 }
 
 document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('create-bin-button').addEventListener('click', createBin)
-})
+});
