@@ -7,9 +7,9 @@ const deleteBin = async () => {
   console.log(deleted);
 }
 
-const cronSimulation = async() => {
-  const milliSecondsInDay = 1000*60*60*24;
-  setInterval(deleteBin, milliSecondsInDay);
-}
+//const cronSimulation = async() => {
+//  const milliSecondsInDay = 1000*60*60*24;
+//  setInterval(deleteBin, milliSecondsInDay);
+//}
 
-cronSimulation();
+deleteBin();
