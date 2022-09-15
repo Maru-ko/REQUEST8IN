@@ -1,6 +1,6 @@
 require('dotenv').config();
 const express = require('express');
-const database = require("./data/configs/Data");
+const database = require("./data/Data");
 const { v4: uuid } = require('uuid');
 const app = express();
 // const flash = require("express-flash")
