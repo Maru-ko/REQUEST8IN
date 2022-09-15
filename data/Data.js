@@ -24,15 +24,18 @@ const getRequests = async (binId) => {
   return requests;
 }
 
-// deleteBin(binId)
+const deleteBin = async (binId) => {
+  await postgresQueries.deleteBin(binId);
+  return await mongoQueries.deleteBin(binId);
+}
 
 const methods = {
   binExists,
   createBin,
   addRequest,
   getRequests,
+  deleteBin,
 
 }
 
 module.exports = methods;
-
