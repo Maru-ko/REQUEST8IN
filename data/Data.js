@@ -25,6 +25,7 @@ const getRequests = async (binId) => {
 }
 
 const deleteBin = async (binId) => {
+  await postgresQueries.deleteBin(binId);
   return await mongoQueries.deleteBin(binId);
 }
 
