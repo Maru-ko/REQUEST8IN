@@ -31,6 +31,7 @@ const deleteBin = async (binId) => {
 const deleteBinsOlderThan = async (daysOld) => {
   const binsToDelete = await postgresQueries.getBinsOlderThan(daysOld);
   binsToDelete.forEach(async binId => {
+    if (!binExists(binId)) return;
     await postgresQueries.deleteBin(binId);
     await mongoQueries.deleteBin(binId);
   });
