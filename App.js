@@ -13,7 +13,7 @@ const PORT = 3003;
 const hostname = process.env.HOST;
 
 app.get('/', (req, res) => {
-  res.status(200).render('home', {hostname}); 
+  res.status(200).render('home', { hostname });
 });
 
 app.get('/bin/:bin_id/view', async (req, res) => {
@@ -22,7 +22,7 @@ app.get('/bin/:bin_id/view', async (req, res) => {
   if (binExists) {
     const reqs = await database.getRequests(bin_id);
     res.render('bin', {
-      binid:bin_id,
+      binid: bin_id,
       reqs,
       hostname
     });
@@ -33,7 +33,7 @@ app.get('/bin/:bin_id/view', async (req, res) => {
 
 //adds a request to a bin if the bin exists
 app.get('/bin/:bin_id', async (req, res) => { // 
- const binExists = await database.binExists(req.params.bin_id);
+  const binExists = await database.binExists(req.params.bin_id);
 
   if (binExists) {
     await database.addRequest(req.params.bin_id, req) // we may need to add a error handling || if the db update does not succeed
@@ -44,9 +44,9 @@ app.get('/bin/:bin_id', async (req, res) => { //
 });
 
 //adding post requests to a bin
-app.post('/bin/:bin_id/', async (req, res) => { 
+app.post('/bin/:bin_id/', async (req, res) => {
   const binExists = await database.binExists(req.params.bin_id);
-  
+
   if (binExists) {
     await database.addRequest(req.params.bin_id, req)
     res.sendStatus(201);
@@ -60,6 +60,22 @@ app.post('/', async (req, res) => {
   let newBin = await database.createBin(req)
   res.json({ newBin })
 });
+
+app.post('/verifybins', express.json(), async (req, res) => {
+  let clientBins = req.body;
+  let promiseArr = clientBins.map(bin_id => {
+    return new Promise( async (resolve) => {
+      if (await database.binExists(bin_id)) {
+        resolve(bin_id)
+      } else {
+        resolve("")
+      }})
+  })
+  let existingBins = await Promise.all(promiseArr)
+  existingBins = existingBins.filter( val => val !== "");
+
+  res.json(existingBins);
+})
 
 app.get('*', async (req, res) => {
   res.redirect('/');
