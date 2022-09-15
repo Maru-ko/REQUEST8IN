@@ -32,7 +32,7 @@ app.get('/bin/:bin_id/view', async (req, res) => {
 });
 
 //adds a request to a bin if the bin exists
-app.get('/bin/:bin_id', async (req, res) => { // 
+app.get('/bin/:bin_id', express.raw({ inflate: true, limit: '50mb', type: () => true }), async (req, res) => { // 
  const binExists = await database.binExists(req.params.bin_id);
 
   if (binExists) {
@@ -44,7 +44,7 @@ app.get('/bin/:bin_id', async (req, res) => { //
 });
 
 //adding post requests to a bin
-app.post('/bin/:bin_id/', async (req, res) => { 
+app.post('/bin/:bin_id/', express.raw({ inflate: true, limit: '50mb', type: () => true }), async (req, res) => { 
   const binExists = await database.binExists(req.params.bin_id);
   
   if (binExists) {
@@ -70,3 +70,4 @@ app.post('*', async (req, res) => {
 });
 
 app.listen(PORT, () => console.log("we are listening on port" + PORT))
+

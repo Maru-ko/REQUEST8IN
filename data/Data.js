@@ -24,7 +24,9 @@ const getRequests = async (binId) => {
   return requests;
 }
 
-// deleteBin(binId)
+const deleteBin = async (binId) => {
+  
+}
 
 const methods = {
   binExists,
@@ -35,4 +37,3 @@ const methods = {
 }
 
 module.exports = methods;
-
