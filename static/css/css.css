@@ -61,7 +61,6 @@ body {
   cursor: pointer;
 }
 
-
 .sidebar {
   grid-area: sidebar;
   padding-left: 10%;
@@ -121,8 +120,6 @@ body {
   row-gap: 20px;
   overflow-x:hidden;
 }
-
-
 
 .request-topline {
   grid-area: topline;
@@ -188,3 +185,16 @@ body {
 a {
   color: var(--text-color)
 }
+
+img#plus {
+  transition: transform .7s ease-in-out;
+}
+
+img#plus:hover {
+  transform: rotate(360deg);
+}
+
+#create-a-bin:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 25px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
