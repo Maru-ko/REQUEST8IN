@@ -5,7 +5,18 @@ module.exports.parseRequest = (req) => {
   const method = req.method;
   const protocol = req.protocol;
   const headers = req.headers;
-  const body = req.body.toString();
+  let body = req.body;
+
+  if (body.constructor.name == 'Buffer') {
+    body = body.toString();
+  } else {
+    body = JSON.stringify(body);
+  }
+
+  if (body === '{}') {
+    body = undefined;
+  }
+
   const queryParams = req.query;
   const requestor_ip = req.headers['x-forwarded-for'] || req.ip;
   const time_received = new Date();
