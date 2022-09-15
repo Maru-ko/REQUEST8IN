@@ -8,8 +8,9 @@ const createBin = async (ip) => {
 }
 
 const deleteBin = async (binId) => {
-
-  // return true if bin is deleted
+  const result = await PGPool.query('DELETE FROM bins WHERE path = $1 RETURNING true', binId);
+  const deleted = result.rowCount == 1;
+  return deleted;
 }
 
 const getBinIdsByDate = async (date) => {
