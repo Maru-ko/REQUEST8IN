@@ -10,9 +10,10 @@ app.set('view engine', 'pug')
 app.use(express.static('static'))
 
 const PORT = 3003;
+const hostname = process.env.HOST;
 
 app.get('/', (req, res) => {
-  res.status(200).render('home'); 
+  res.status(200).render('home', {hostname}); 
 });
 
 app.get('/bin/:bin_id/view', async (req, res) => {
@@ -22,7 +23,8 @@ app.get('/bin/:bin_id/view', async (req, res) => {
     const reqs = await database.getRequests(bin_id);
     res.render('bin', {
       binid:bin_id,
-      reqs
+      reqs,
+      hostname
     });
   } else {
     res.redirect('/');
