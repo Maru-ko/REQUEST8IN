@@ -37,12 +37,30 @@ body {
   gap: 5%;
 }
 
+.header-content a  {
+  text-decoration: none;
+}
+
 .content {
   grid-area: content;
   background-color: var(--component-color);
   padding: 2px 0px 0px 10px;
   border-radius: var(--border-radius);
 }
+
+#homepage-create-bin-button button {
+  padding: 2% 3% 2% 3%;
+  border-style: solid;
+  border-width: 2px;
+  margin: 5%;
+  font-size: 2em;
+
+  color: var(--text-color);
+  border-color: var(--border-radius);
+  background-color: var(--component-color);
+  cursor: pointer;
+}
+
 
 .sidebar {
   grid-area: sidebar;

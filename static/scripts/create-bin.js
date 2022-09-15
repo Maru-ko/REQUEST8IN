@@ -18,5 +18,8 @@ async function createBin(event) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  document.getElementById('create-bin-button').addEventListener('click', createBin)
+  let buttons = document.querySelectorAll('.create-bin-button');
+  Array.prototype.slice.call(buttons).forEach( button => {
+    button.addEventListener('click', createBin)
+  })
 });

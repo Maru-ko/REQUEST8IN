@@ -15,7 +15,8 @@ html
 body 
   .header
     .header-content
-      h1 Request8in 
+      a(href=`${hostname}`)
+        h1 Request8in 
       h2 An HTTP Request Collector
   
   .content
@@ -23,7 +24,7 @@ body
 
   .sidebar 
     .sidebar-header
-      a(href='/')#create-bin-button
+      a(href='/').create-bin-button
         img(src=`${hostname}/images/plus-purple.png` width="30px" height="30px")
       h3 Your bins
     #sidebar-items
