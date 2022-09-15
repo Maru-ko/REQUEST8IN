@@ -25,7 +25,7 @@ app.get('/bin/:bin_id/view', async (req, res) => {
       reqs
     });
   } else {
-    res.sendStatus(301).redirect('/');
+    res.redirect('/');
   }
 });
 
