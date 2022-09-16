@@ -27,7 +27,8 @@ body {
 
 .header {
   grid-area: header;
-  background-color: var(--component-color);
+  background: rgb(39,40,56);
+  background: linear-gradient(102deg, rgba(39,40,56,1) 46%, rgba(25,25,29,1) 100%);
   border-radius: var(--border-radius);
 }
 
@@ -46,7 +47,8 @@ body {
 
 .content {
   grid-area: content;
-  background-color: var(--component-color);
+  background: rgb(39,40,56);
+  background: linear-gradient(177deg, rgba(39,40,56,1) 72%, rgba(25,25,29,1) 100%);
   padding: 2px 0px 0px 10px;
   border-radius: var(--border-radius);
 }
@@ -178,6 +180,8 @@ body {
 }
 
 .footer {
+  font-family: 'Sora';
+  font-weight: 200;
   background-color: var(--component-color);
   grid-area: footer;
   padding-left: 10px;
