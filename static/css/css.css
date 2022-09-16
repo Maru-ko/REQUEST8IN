@@ -201,7 +201,7 @@ img#plus:hover {
   background-color: #272838 !important;
   }
   
-#create-a-bin:hover, #delete-button {
+#create-a-bin:hover, #delete-button:hover {
     animation: glow 1000ms infinite;
     background-color: #272838 !important;
     }
@@ -214,9 +214,6 @@ img#plus:hover {
       box-shadow: #2CB67D00 0 0 0 12px;
     }
 }
-
-
-
 
 #delete-button {
   border-style: solid;
