@@ -3,12 +3,14 @@ mixin sidebarItem(id)
 
 html 
   head 
-    title Request8in 
+    title REQUEST8IN 
     block scripts
     link(rel='stylesheet', href="/css/css.css", type="text/css")
     link(rel="preconnect" href="https://fonts.googleapis.com")
     link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
     link(href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet")
+    link(href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600&display=swap" rel="stylesheet")
+    link(href="https://fonts.googleapis.com/css2?family=Sora:wght@200;300;400;500;600&display=swap" rel="stylesheet")
     script(src=`${hostname}/scripts/create-bin.js`)
     script(src=`${hostname}/scripts/load-local-bins.js`)
 
@@ -26,7 +28,7 @@ body
     .sidebar-header
       a(href='/').create-bin-button
         img(src=`${hostname}/images/plus-purple.png` width="30px" height="30px"  id="plus")
-      h3 Your bins
+      h3 YOUR BINS
     #sidebar-items
 
   .footer
