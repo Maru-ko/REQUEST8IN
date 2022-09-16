@@ -4,7 +4,7 @@ html {
   --request-area-bg: #19191d;
   --border-color: #989fce;
   --text-color: #989fce;
-  --border-radius: 4px;
+  --border-radius: 10px;
 }
 
 body {
@@ -173,8 +173,6 @@ body {
   overflow-x: scroll;
 }
 
-
-
 .footer {
   background-color: var(--component-color);
   grid-area: footer;
@@ -198,3 +196,6 @@ img#plus:hover {
   box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 25px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
+h1 {
+
+}
