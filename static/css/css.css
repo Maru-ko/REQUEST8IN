@@ -200,10 +200,10 @@ img#plus:hover {
   transform: rotate(360deg);
 }
 
-#create-a-bin, img#plus, .header {
+#create-a-bin, img#plus, .header, a:hover {
   animation: glow 2000ms ease-in;
   background-color: #272838 !important;
-  }
+}
   
 #create-a-bin:hover, #delete-button:hover {
     animation: glow 1000ms infinite;
