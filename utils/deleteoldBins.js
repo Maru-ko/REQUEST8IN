@@ -18,9 +18,6 @@ const dataQueries = require('../data/Data');
 const deleteBin = async () => {
   const days = process.env.BINS_DELETE_DAY;
   const deleted = await dataQueries.deleteBinsOlderThan(days)
-  dataQueries.deleteBin('52b516cd-af2e-4d3b-be2d-fc0607a60a86');
-
-  console.log('deleted');
 }
 
 //const cronSimulation = async() => {
