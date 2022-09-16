@@ -199,3 +199,14 @@ img#plus:hover {
 h1 {
 
 }
+
+#delete-button {
+  border-style: solid;
+  border-width: 2px;
+  font-size: 1em;
+
+  color: var(--text-color);
+  border-color: var(--border-radius);
+  background-color: var(--component-color);
+  cursor: pointer;
+}

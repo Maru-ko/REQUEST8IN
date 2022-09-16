@@ -34,7 +34,7 @@ block content
       h2 #{hostname}/bin/#{binid}
       p Send requests to the above URL
       form.delete(action=`/${binid}/destroy` method="post")
-            button.delete(type="submit") Delete bin
+            button.delete(type="submit" id="delete-button") Delete bin
       h3 Request History:
 
 
