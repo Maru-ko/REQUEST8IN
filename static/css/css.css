@@ -12,7 +12,7 @@ body {
   color: var(--text-color);
   background-color: var(--main-bg-color);
   display: grid;
-  grid-template-columns: 15% 80%;
+  grid-template-columns: minmax(100px, 1fr) minmax(400px, 4fr);
   grid-template-rows: 10% auto 10%;
   grid-template-areas:
     "header header"
@@ -111,7 +111,7 @@ body {
 
 .request-grid-topline-content {
   display: grid;
-  grid-template-columns: 4fr 5fr;
+  grid-template-columns: minmax(200px, 1fr) minmax(200px, 1fr) ;
   grid-template-rows: auto auto;
   grid-template-areas:
   "topline topline"
@@ -119,6 +119,7 @@ body {
   column-gap: 10px;
   row-gap: 20px;
   overflow-x:hidden;
+  overflow-wrap:break-word;
 }
 
 .request-topline {
@@ -148,7 +149,6 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
 }
 
 .request-headers {
