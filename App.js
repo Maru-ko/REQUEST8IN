@@ -84,8 +84,9 @@ app.post('/verifybins', express.json(), async (req, res) => {
 })
 
 //delete a bin
-app.delete('/:bin_id', async(req, res) => {
+app.post('/:bin_id/destroy', async(req, res) => {
   let bin_id = req.params.bin_id;
+  console.log(bin_id);
   const binExists = await database.binExists(bin_id);
 
   if (binExists) {
