@@ -11,7 +11,7 @@
 
 # REQUEST8IN
 
-![badmath](https://github.com/Maru-ko/Request8in/blob/main/img/8.jpg)
+![badmath](https://github.com/Maru-ko/REQUEST8IN/blob/main/img/team8.jpg)
 
 ## Credits
 
