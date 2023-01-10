@@ -1,7 +1,7 @@
 ## Request8in
 Request8in is a tool that allows you to create a temporary URL (also known as a "bin") that you can use to send HTTP requests to. This can be helpful for testing webhooks and other integrations that require sending HTTP requests to a specific URL. This was built using: DigitalOcean
 Droplet, Express, MongoDB, Node.js, Nginx, PostgreSQL, React, Pug.
-Overall, RequestBin is a useful tool for testing webhooks and other integrations that involve sending HTTP requests.
+Overall, Request8in is a useful tool for testing webhooks and other integrations that involve sending HTTP requests.
 
 ## Built with  👇
 <div style="display: inline_block"><br>
